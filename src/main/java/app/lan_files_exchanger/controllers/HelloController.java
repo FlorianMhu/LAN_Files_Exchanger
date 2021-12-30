@@ -1,4 +1,4 @@
-package app.lan_files_exchanger;
+package app.lan_files_exchanger.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
