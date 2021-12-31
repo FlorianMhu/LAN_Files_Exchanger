@@ -14,9 +14,10 @@ public class MainApp extends Application {
 
     private Stage primaryStage;
     private BorderPane rootLayout;
+    private static final int defaultFontSize=13;
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) {
         this.primaryStage = stage;
         stage.setTitle("LAN Files Exchanger");
 
@@ -35,6 +36,9 @@ public class MainApp extends Application {
         catch (NullPointerException e){
             System.out.println("Default CSS stylesheet not found");
         }
+
+        //Resize the font size in function of the screen display scale
+        primaryStage.getScene().getRoot().setStyle("-fx-font-size: "+ defaultFontSize/primaryScreen.getOutputScaleX()+"pt");
 
     }
 

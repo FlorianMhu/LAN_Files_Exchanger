@@ -5,5 +5,5 @@ import javafx.fxml.FXML;
 
 public class LANFilesExchangerController {
     @FXML
-    protected void onBtnSendFilesClicked(ActionEvent event) {System.out.println("Send Files clicked");    }
+    private void onBtnSendFilesClicked(ActionEvent event) {System.out.println("Send Files clicked");    }
 }
