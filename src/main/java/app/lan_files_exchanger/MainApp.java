@@ -1,10 +1,12 @@
 package app.lan_files_exchanger;
 
+import app.lan_files_exchanger.controllers.LANFilesExchangerController;
+import app.lan_files_exchanger.model.HostDevice;
 import javafx.application.Application;
+import javafx.collections.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.stage.Screen;
 import java.io.IOException;
@@ -15,6 +17,14 @@ public class MainApp extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
     private static final int defaultFontSize=13;
+    private static final int windowWidth = 940;
+    private static final int windowHeight = 540;
+
+
+
+    public MainApp(){
+        //hostDevices.add(new HostDevice("Pc maître course","192.168.1.52"));
+    }
 
     @Override
     public void start(Stage stage) {
@@ -22,8 +32,8 @@ public class MainApp extends Application {
         stage.setTitle("LAN Files Exchanger");
 
         Screen primaryScreen = Screen.getPrimary();
-        int initWidth = (int)(960/primaryScreen.getOutputScaleX());
-        int initHeight = (int)(540/primaryScreen.getOutputScaleY());
+        int initWidth = (int)(windowWidth/primaryScreen.getOutputScaleX());
+        int initHeight = (int)(windowHeight/primaryScreen.getOutputScaleY());
 
         //Set default windows size depending on the scale of display
         initRootLayout(initWidth,initHeight);
